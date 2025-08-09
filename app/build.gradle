@@ -11,12 +11,12 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace 'tianci.dev.xptranslatetext'
-    compileSdk 34
+    compileSdk 36
 
     defaultConfig {
         applicationId "tianci.dev.xptranslatetext"
         minSdk 28
-        targetSdk 34
+        targetSdk 36
         versionCode 1510
         versionName "1.5.10"
 
