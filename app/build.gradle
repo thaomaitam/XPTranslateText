@@ -2,13 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
-def keystorePropertiesFile = rootProject.file("keystore.properties")
-def keystoreProperties = new Properties()
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-}
-
-
 android {
     namespace 'tianci.dev.xptranslatetext'
     compileSdk 36
@@ -21,17 +14,6 @@ android {
         versionName "1.5.10"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    signingConfigs {
-        release {
-            storeFile file(
-                    keystoreProperties.getProperty('androidStoreFile', 'key.jks')
-            )
-            storePassword keystoreProperties.getProperty('androidStorePassword', '')
-            keyAlias keystoreProperties.getProperty('androidKeyAlias', '')
-            keyPassword keystoreProperties.getProperty('androidKeyPassword', '')
-        }
     }
 
     buildTypes {
